@@ -17,7 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib
   cmake_modules
 )
-find_package(Eigen REQUIRED)
+find_package(Eigen3 REQUIRED)
 find_package(Boost REQUIRED thread system filesystem date_time program_options)
 
 generate_dynamic_reconfigure_options("katana_pick_place/cfg/KatanaPickPlaceDynamicReconfigure.cfg")
@@ -32,6 +32,8 @@ catkin_package(
     moveit_core
     moveit_ros_planning
     )
+
+set (CMAKE_CXX_STANDARD 11)
 
 include_directories(katana_pick_place/include)
 include_directories(move_group_katana_pick_place_capability/include)
