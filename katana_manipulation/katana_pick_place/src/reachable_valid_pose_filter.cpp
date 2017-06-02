@@ -89,7 +89,7 @@ bool pick_place::ReachableAndValidPoseFilter::evaluate(const ManipulationPlanPtr
 
     const std::string &planning_group = plan->shared_data_->planning_group_->getName();
 
-    ROS_INFO_STREAM("Planning group: " << planning_group);
+    ROS_DEBUG_STREAM("Planning group: " << planning_group);
     // construct a sampler for the specified constraints; this can end up calling just IK, but it is more general
     // and allows for robot-specific samplers, producing samples that also change the base position if needed, etc
     plan->goal_sampler_ = constraints_sampler_manager_->selectSampler(planning_scene_, planning_group, plan->goal_constraints_);
